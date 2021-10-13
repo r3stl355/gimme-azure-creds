@@ -18,7 +18,7 @@ from .auth import AADAuthHandler
 @click.option("--secret-key-access", prompt="Secret key for access token", help="Secret key (name) for your Azure AD access token")
 @click.option("--secret-key-refresh", prompt="Secret key for refresh token", help="Secret key (name) for your Azure AD refresh token")
 def get_token(**kwargs):
-    """Obtain a user token from Azure Active Directory and 
+    """Obtain a user token from Azure Active Directory and
     store it as a secret in an Azure Databricks workspace"""
 
     c = Config(**kwargs)
@@ -31,9 +31,13 @@ def get_token(**kwargs):
         print("Could not obtain an AAD token.")
         raise
 
+    click.echo("--> writing secrets to Azure Databricks secret store...")
+
     api_client = ApiClient(host=f"https://{c.workspace}", token=access_token)
     secret_service = SecretService(api_client)
     secret_service.put_secret(c.secret_scope, c.secret_key_access, string_value=access_token)
     secret_service.put_secret(c.secret_scope, c.secret_key_refresh, string_value=refresh_token)
+
+    click.echo("--> write successful.")
 
     webbrowser.open_new(f'https://{c.workspace}')
