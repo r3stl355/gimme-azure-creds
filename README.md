@@ -55,6 +55,15 @@ If all goes well you should see the following in the Terminal, and a Databricks 
 
 ![image info](succeeded.png)
 
-Login, create a notebook and access the secrets using the `dbutils.secrets.get()` utility, documented [here](https://docs.microsoft.com/en-gb/azure/databricks/dev-tools/databricks-utils#dbutils-secrets)
+Login, create a notebook and access the secrets using the `dbutils.secrets.get()` utility, documented [here](https://docs.microsoft.com/en-gb/azure/databricks/dev-tools/databricks-utils#dbutils-secrets).
+
+To complete the example above, you could access the Access Token using:
+```
+dbutils.secrets.get("myScope", "aad_access_token)
+```
+and the Refresh Token using:
+```
+dbutils.secrets.get("myScope", "aad_refresh_token)
+```
 
 The Access Token can be used to make Databricks API calls or for JDBC connections. A corresponding Refresh Token is stored to the second secret key and can be used to refresh Access Tokens.
