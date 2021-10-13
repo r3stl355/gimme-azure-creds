@@ -1,9 +1,10 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 setup(
     name='gimme-azure-creds',
     version='0.1.0',
-    py_modules=['gimmeazurecreds'],
+    packages=find_packages(),
+    include_package_data=True,
     install_requires=[
         'Click',
         "adal", 
@@ -11,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'gimme-azure-creds=gimmeazurecreds:get_token',
+            'gimme-azure-creds=src.gimmeazurecreds:get_token',
         ],
     },
 )

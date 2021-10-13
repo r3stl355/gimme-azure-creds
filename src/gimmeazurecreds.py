@@ -1,8 +1,8 @@
 import click
 import webbrowser
 from databricks_cli.sdk import ApiClient, SecretService
-from config import Config
-from auth import AADAuthHandler
+from .config import Config
+from .auth import AADAuthHandler
 
 @click.command()
 @click.option(
