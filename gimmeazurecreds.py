@@ -17,7 +17,6 @@ from auth import AADAuthHandler
     You should ensure that only you have access to this secret scope.""")
 @click.option("--secret-key-access", prompt="Secret key for access token", help="Secret key (name) for your Azure AD access token")
 @click.option("--secret-key-refresh", prompt="Secret key for refresh token", help="Secret key (name) for your Azure AD refresh token")
-# @click.option("--port", default=8001, prompt="Local webserver port", help="Unused port on your local machine on which to run a temporary webserver")
 def get_token(**kwargs):
     """Obtain a user token from Azure Active Directory and 
     store it as a secret in an Azure Databricks workspace"""
@@ -38,6 +37,3 @@ def get_token(**kwargs):
     secret_service.put_secret(c.secret_scope, c.secret_key_refresh, string_value=refresh_token)
 
     webbrowser.open_new(f'https://{c.workspace}')
-
-# if __name__ == "__main__":
-#     get_token()
