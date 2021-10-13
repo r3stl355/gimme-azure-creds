@@ -5,7 +5,7 @@
 - A user account in an Azure Databricks workspace
 - Domain name of the Azure Databricks workspace, e.g. `adb-xxx.azuredatabricks.net`  
 - Tenant ID in Azure AD
-- Databricks-managed (_not_ Azure Key Vault backed) secret scope in which to store the tokens. You should ensure that only you have access to this secret scope.
+- Databricks-managed (_not_ Azure Key Vault backed) secret scope in which to store the tokens. You should ensure that only you have access to this secret scope using the secret scope ACLs documented [here](https://docs.microsoft.com/en-gb/azure/databricks/security/secrets/secret-scopes#scope-permissions).
 
 ## Setup
 
