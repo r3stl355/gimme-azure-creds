@@ -1,6 +1,6 @@
 # How to generate Azure Active Directory personal tokens and store them as Databricks Secrets
 
-## Requriements
+## Requirements
 
 - A user account in an Azure Databricks workspace
 - Domain name of the Azure Databricks workspace, e.g. `adb-xxx.azuredatabricks.net`  
