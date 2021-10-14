@@ -9,7 +9,7 @@
 
 ## Setup
 
-- Install the CLI and dependencies from the provided `.whl` file.
+Install the CLI and dependencies from the provided `.whl` file.
 ```
 $ pip install https://github.com/r3stl355/gimme-azure-creds/releases/download/0.1.0-beta/gimme_azure_creds-0.1.0-py3-none-any.whl
 ```
@@ -59,11 +59,11 @@ Login, create a notebook and access the secrets using the `dbutils.secrets.get()
 
 To complete the example above, you could access the Access Token using:
 ```
-dbutils.secrets.get("myScope", "aad_access_token)
+dbutils.secrets.get("myScope", "aad_access_token")
 ```
 and the Refresh Token using:
 ```
-dbutils.secrets.get("myScope", "aad_refresh_token)
+dbutils.secrets.get("myScope", "aad_refresh_token")
 ```
 
 The Access Token can be used to make Databricks API calls or for JDBC connections. A corresponding Refresh Token is stored to the second secret key and can be used to refresh Access Tokens.
