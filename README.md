@@ -67,3 +67,7 @@ dbutils.secrets.get("myScope", "aad_refresh_token)
 ```
 
 The Access Token can be used to make Databricks API calls or for JDBC connections. A corresponding Refresh Token is stored to the second secret key and can be used to refresh Access Tokens.
+
+## Flow
+
+![image info](flow.png)
