@@ -12,7 +12,7 @@
 
 Install the CLI and dependencies from the provided `.whl` file.
 ```
-$ pip install https://github.com/r3stl355/gimme-azure-creds/releases/download/0.1.0-beta/gimme_azure_creds-0.1.0-py3-none-any.whl
+$ pip install https://github.com/r3stl355/gimme-azure-creds/releases/download/v0.1.0-beta/gimme_azure_creds-0.1.0-py3-none-any.whl
 ```
 
 ## Run
